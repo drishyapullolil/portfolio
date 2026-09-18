@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drishya Jose | Full Stack Developer & IoT Specialist</title>
+  <meta name="description" content="Portfolio of Drishya Jose - Full Stack Developer specializing in React.js, Node.js, Spring Boot, and IoT-based solutions.">
+  <meta name="keywords" content="Drishya Jose, Full Stack Developer, React.js, Node.js, Spring Boot, IoT, Portfolio, Web Developer">
+  <meta name="author" content="Drishya Jose">
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:title" content="Drishya Jose | Full Stack Developer & IoT Specialist">
+  <meta property="og:description" content="Explore my full stack web applications, IoT projects, and engineering experience.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Interactive Canvas Background -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Home">
+        <span class="logo-badge">&lt;DJ /&gt;</span>
+        <span class="logo-name">Drishya Jose</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> About</a></li>
+          <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a></li>
+          <li><a href="#projects" class="nav-link"><i class="fa-solid fa-layer-group"></i> Projects</a></li>
+          <li><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+          <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+          <li><a href="#certifications" class="nav-link"><i class="fa-solid fa-certificate"></i> Certs</a></li>
+          <li><a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle dark and light mode">
+          <i class="fa-solid fa-sun light-icon"></i>
+          <i class="fa-solid fa-moon dark-icon"></i>
+        </button>
+
+        <!-- Resume Download Button -->
+        <a href="#contact" class="btn btn-outline nav-cta" id="resume-btn">
+          <span>Get in Touch</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="status-pill animate-fade-in">
+            <span class="status-dot"></span>
+            <span>Open to Full Stack & IoT Engineering Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="greeting">Hello, I'm</span>
+            <span class="name-gradient">Drishya Jose</span>
+          </h1>
+
+          <div class="typewriter-box">
+            <span class="typewriter-prefix">I build </span>
+            <span id="typewriter" class="typewriter-text"></span>
+            <span class="cursor">&nbsp;</span>
+          </div>
+
+          <p class="hero-description">
+            Passionate Full Stack Developer with practical expertise in crafting scalable web applications, RESTful microservices, and connected IoT solutions. Proficient in modern JavaScript, React.js, Node.js, Spring Boot, and robust database architectures.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-rocket"></i>
+              <span>Explore My Work</span>
+            </a>
+            <a href="#contact" class="btn btn-glass">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Let's Talk</span>
+            </a>
+            <button class="btn btn-ghost copy-email-btn" data-email="drishyajose03@gmail.com" title="Click to copy email">
+              <i class="fa-regular fa-copy"></i>
+              <span>Copy Email</span>
+            </button>
+          </div>
+
+          <!-- Social Links -->
+          <div class="hero-socials">
+            <span class="social-label">Connect:</span>
+            <a href="https://github.com/drishyapullolil" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/drishya-jose" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:drishyajose03@gmail.com" class="social-link" title="Send Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:+919539923291" class="social-link" title="Call">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual / Interactive Showcase Card -->
+        <div class="hero-visual">
+          <div class="code-window glass-panel">
+            <div class="window-header">
+              <div class="window-controls">
+                <span class="control red"></span>
+                <span class="control yellow"></span>
+                <span class="control green"></span>
+              </div>
+              <div class="window-tab">
+                <i class="fa-brands fa-js"></i> developer.profile.js
+              </div>
+            </div>
+            <div class="window-body">
+              <pre><code><span class="code-keyword">const</span> <span class="code-var">engineer</span> = {
+  <span class="code-prop">name</span>: <span class="code-str">'Drishya Jose'</span>,
+  <span class="code-prop">title</span>: <span class="code-str">'Full Stack & IoT Developer'</span>,
+  <span class="code-prop">location</span>: <span class="code-str">'Kerala, India'</span>,
+  <span class="code-prop">stack</span>: [
+    <span class="code-str">'React.js'</span>, <span class="code-str">'Node.js'</span>, 
+    <span class="code-str">'Spring Boot'</span>, <span class="code-str">'MongoDB'</span>,
+    <span class="code-str">'Embedded IoT'</span>, <span class="code-str">'MySQL'</span>
+  ],
+  <span class="code-prop">passion</span>: <span class="code-str">'Building scalable & smart tech'</span>,
+  <span class="code-prop">status</span>: <span class="code-str">'Available for Opportunities'</span>,
+  <span class="code-func">collaborate</span>: () =&gt; {
+    <span class="code-keyword">return</span> <span class="code-str">'Let\'s build something awesome!'</span>;
+  }
+};</code></pre>
+            </div>
+            <div class="window-footer">
+              <div class="stat-pill"><i class="fa-solid fa-bolt"></i> Fast REST APIs</div>
+              <div class="stat-pill"><i class="fa-solid fa-microchip"></i> IoT Integration</div>
+              <div class="stat-pill"><i class="fa-solid fa-shield-halved"></i> Secure Architectures</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="container stats-strip">
+        <div class="stat-card glass-panel">
+          <div class="stat-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <div class="stat-details">
+            <span class="stat-num" data-target="5">5+</span>
+            <span class="stat-title">Featured Projects</span>
+          </div>
+        </div>
+        <div class="stat-card glass-panel">
+          <div class="stat-icon"><i class="fa-solid fa-cubes"></i></div>
+          <div class="stat-details">
+            <span class="stat-num" data-target="10">10+</span>
+            <span class="stat-title">Tech Stacks & Tools</span>
+          </div>
+        </div>
+        <div class="stat-card glass-panel">
+          <div class="stat-icon"><i class="fa-solid fa-certificate"></i></div>
+          <div class="stat-details">
+            <span class="stat-num" data-target="6">6+</span>
+            <span class="stat-title">Certifications</span>
+          </div>
+        </div>
+        <div class="stat-card glass-panel">
+          <div class="stat-icon"><i class="fa-solid fa-building-user"></i></div>
+          <div class="stat-details">
+            <span class="stat-num">Industry</span>
+            <span class="stat-title">Internship Experience</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-user"></i> Who I Am</span>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">A journey through building clean web systems and embedded engineering solutions.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-card glass-panel">
+            <h3>Full Stack Problem Solver & IoT Enthusiast</h3>
+            <p>
+              I am a results-oriented <strong>Full Stack Developer</strong> currently pursuing my <strong>Integrated Master of Computer Applications (MCA)</strong> at Amal Jyothi College of Engineering. I specialize in developing end-to-end web platforms and hardware-integrated IoT architectures that tackle real-world problems.
+            </p>
+            <p>
+              My hands-on experience spans from engineering RESTful APIs with Node.js and Express to building enterprise-grade modular backends in Spring Boot and reactive client frontends with React.js. I have a keen eye for system reliability, role-based security, clean database design, and real-time data streaming.
+            </p>
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Hands-on industrial internship experience with REST APIs & React.</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Proven ability to design multi-role IoT platforms with RFID & GPS telemetry.</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Certified in Cybersecurity (Google), Cloud AI (Oracle), AWS & DevOps.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-info-card glass-panel">
+            <h3 class="card-heading"><i class="fa-solid fa-address-card"></i> Contact & Details</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-label"><i class="fa-solid fa-location-dot"></i> Location:</span>
+                <span class="info-value">Kerala, India</span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-envelope"></i> Email:</span>
+                <span class="info-value"><a href="mailto:drishyajose03@gmail.com">drishyajose03@gmail.com</a></span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-phone"></i> Phone:</span>
+                <span class="info-value"><a href="tel:+919539923291">+91 9539923291</a></span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-brands fa-linkedin"></i> LinkedIn:</span>
+                <span class="info-value"><a href="https://linkedin.com/in/drishya-jose" target="_blank" rel="noopener">linkedin.com/in/drishya-jose</a></span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-brands fa-github"></i> GitHub:</span>
+                <span class="info-value"><a href="https://github.com/drishyapullolil" target="_blank" rel="noopener">github.com/drishyapullolil</a></span>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-graduation-cap"></i> Degree:</span>
+                <span class="info-value">Integrated MCA (2022–2027)</span>
+              </li>
+            </ul>
+
+            <div class="quick-cta-box">
+              <span>Looking for an agile, dedicated engineer?</span>
+              <a href="#contact" class="btn btn-primary btn-sm">Let's Connect</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-gears"></i> Expertise</span>
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="section-subtitle">Technologies, frameworks, databases, and architectural tools I leverage to create solid digital solutions.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Languages -->
+          <div class="skill-category-card glass-panel">
+            <div class="category-header">
+              <div class="cat-icon"><i class="fa-solid fa-code"></i></div>
+              <h3>Programming Languages</h3>
+            </div>
+            <div class="skills-tags">
+              <div class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</div>
+              <div class="skill-pill"><i class="fa-brands fa-python"></i> Python</div>
+              <div class="skill-pill"><i class="fa-brands fa-java"></i> Java</div>
+              <div class="skill-pill"><i class="fa-brands fa-php"></i> PHP</div>
+              <div class="skill-pill"><i class="fa-solid fa-terminal"></i> C / C++ (Embedded)</div>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-category-card glass-panel">
+            <div class="category-header">
+              <div class="cat-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <h3>Frontend Development</h3>
+            </div>
+            <div class="skills-tags">
+              <div class="skill-pill"><i class="fa-brands fa-react"></i> React.js</div>
+              <div class="skill-pill"><i class="fa-brands fa-html5"></i> HTML5</div>
+              <div class="skill-pill"><i class="fa-brands fa-css3-alt"></i> CSS3 / Modern Flexbox & Grid</div>
+              <div class="skill-pill"><i class="fa-solid fa-mobile-screen"></i> Responsive Web Design</div>
+              <div class="skill-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> UI/UX Best Practices</div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-category-card glass-panel">
+            <div class="category-header">
+              <div class="cat-icon"><i class="fa-solid fa-server"></i></div>
+              <h3>Backend & APIs</h3>
+            </div>
+            <div class="skills-tags">
+              <div class="skill-pill"><i class="fa-brands fa-node-js"></i> Node.js</div>
+              <div class="skill-pill"><i class="fa-solid fa-network-wired"></i> Express.js</div>
+              <div class="skill-pill"><i class="fa-solid fa-leaf"></i> Spring Boot</div>
+              <div class="skill-pill"><i class="fa-solid fa-arrows-split-up-and-left"></i> RESTful API Design</div>
+              <div class="skill-pill"><i class="fa-solid fa-lock"></i> Auth & Authorization (JWT / RBAC)</div>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skill-category-card glass-panel">
+            <div class="category-header">
+              <div class="cat-icon"><i class="fa-solid fa-database"></i></div>
+              <h3>Databases & Storage</h3>
+            </div>
+            <div class="skills-tags">
+              <div class="skill-pill"><i class="fa-solid fa-leaf"></i> MongoDB (NoSQL)</div>
+              <div class="skill-pill"><i class="fa-solid fa-table"></i> MySQL (Relational)</div>
+              <div class="skill-pill"><i class="fa-solid fa-diagram-project"></i> Schema & Relational Design</div>
+              <div class="skill-pill"><i class="fa-solid fa-bolt"></i> Query Optimization</div>
+            </div>
+          </div>
+
+          <!-- IoT & Embedded Systems -->
+          <div class="skill-category-card glass-panel">
+            <div class="category-header">
+              <div class="cat-icon"><i class="fa-solid fa-microchip"></i></div>
+              <h3>IoT & Hardware</h3>
+            </div>
+            <div class="skills-tags">
+              <div class="skill-pill"><i class="fa-solid fa-microchip"></i> Arduino</div>
+              <div class="skill-pill"><i class="fa-solid fa-wifi"></i> IoT Systems & Protocols</div>
+              <div class="skill-pill"><i class="fa-solid fa-id-card"></i> RFID / NFC Tap Systems</div>
+              <div class="skill-pill"><i class="fa-solid fa-location-crosshairs"></i> GPS Real-time Telemetry</div>
+              <div class="skill-pill"><i class="fa-solid fa-wave-square"></i> Sensor Data Processing</div>
+            </div>
+          </div>
+
+          <!-- Tools & Concepts -->
+          <div class="skill-category-card glass-panel">
+            <div class="category-header">
+              <div class="cat-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <h3>Tools & Methodologies</h3>
+            </div>
+            <div class="skills-tags">
+              <div class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git & Version Control</div>
+              <div class="skill-pill"><i class="fa-brands fa-github"></i> GitHub</div>
+              <div class="skill-pill"><i class="fa-solid fa-code"></i> VS Code</div>
+              <div class="skill-pill"><i class="fa-brands fa-wordpress"></i> WordPress / CMS</div>
+              <div class="skill-pill"><i class="fa-solid fa-sitemap"></i> System Design</div>
+              <div class="skill-pill"><i class="fa-solid fa-people-arrows"></i> Agile / Scrum Framework</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-laptop-code"></i> Portfolio</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">A showcase of full stack web applications, embedded hardware IoT integrations, and enterprise architectures.</p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="iot">IoT & Hardware</button>
+          <button class="filter-btn" data-filter="backend">Backend & SaaS</button>
+          <button class="filter-btn" data-filter="web">Web & CMS</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="projects-grid">
+          
+          <!-- Project 1: MoveSmart -->
+          <div class="project-card glass-panel" data-category="fullstack iot" data-project="movesmart">
+            <div class="project-banner movesmart-bg">
+              <div class="project-type-tag"><i class="fa-solid fa-bus"></i> Full Stack + IoT</div>
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-project-btn" data-modal="movesmart">
+                  <i class="fa-solid fa-circle-info"></i> View Details
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">MoveSmart — IoT-Based Smart Private Bus Management System</h3>
+              <p class="project-desc">
+                An end-to-end full stack smart transportation platform featuring automated passenger booking, RFID/NFC smart tap-in/out ticketing, GPS tracking, and intelligent driver scheduling.
+              </p>
+              <div class="project-tech-stack">
+                <span>React.js</span>
+                <span>Node.js</span>
+                <span>Express.js</span>
+                <span>MongoDB</span>
+                <span>RFID/NFC</span>
+                <span>GPS Telemetry</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn" data-modal="movesmart">
+                  <span>Deep Dive & Architecture</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+                <a href="https://github.com/drishyapullolil" target="_blank" rel="noopener" class="icon-link" title="GitHub Source">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Smart Bottle -->
+          <div class="project-card glass-panel" data-category="iot" data-project="smartbottle">
+            <div class="project-banner smartbottle-bg">
+              <div class="project-type-tag"><i class="fa-solid fa-bottle-water"></i> Embedded IoT Product</div>
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-project-btn" data-modal="smartbottle">
+                  <i class="fa-solid fa-circle-info"></i> View Details
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Smart Bottle — IoT Hydration Monitoring Product</h3>
+              <p class="project-desc">
+                An intelligent hydration monitoring device built with embedded sensors and Arduino microcontrollers that measures real-time water consumption and triggers smart audiovisual reminders.
+              </p>
+              <div class="project-tech-stack">
+                <span>Arduino</span>
+                <span>Embedded C</span>
+                <span>Ultrasonic / Level Sensors</span>
+                <span>IoT Logic</span>
+                <span>Buzzer / LED Alerts</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn" data-modal="smartbottle">
+                  <span>Hardware & Logic Specs</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+                <a href="https://github.com/drishyapullolil" target="_blank" rel="noopener" class="icon-link" title="GitHub Source">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Personal Diary Application -->
+          <div class="project-card glass-panel" data-category="backend fullstack" data-project="diary">
+            <div class="project-banner diary-bg">
+              <div class="project-type-tag"><i class="fa-solid fa-book-bookmark"></i> Spring Boot SaaS</div>
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-project-btn" data-modal="diary">
+                  <i class="fa-solid fa-circle-info"></i> View Details
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Personal Diary Application — RESTful SaaS Web App</h3>
+              <p class="project-desc">
+                A secure, multi-tenant journaling application engineered with Java Spring Boot, MySQL, and layered architectural design pattern for end-to-end user privacy and full CRUD operations.
+              </p>
+              <div class="project-tech-stack">
+                <span>Java</span>
+                <span>Spring Boot</span>
+                <span>Spring Security</span>
+                <span>MySQL</span>
+                <span>REST APIs</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn" data-modal="diary">
+                  <span>Security & System Design</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+                <a href="https://github.com/drishyapullolil" target="_blank" rel="noopener" class="icon-link" title="GitHub Source">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Yards of Grace -->
+          <div class="project-card glass-panel" data-category="fullstack web" data-project="yardsofgrace">
+            <div class="project-banner ecommerce-bg">
+              <div class="project-type-tag"><i class="fa-solid fa-bag-shopping"></i> E-Commerce Platform</div>
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-project-btn" data-modal="yardsofgrace">
+                  <i class="fa-solid fa-circle-info"></i> View Details
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Yards of Grace — Saree E-Commerce Platform</h3>
+              <p class="project-desc">
+                A responsive online retail storefront supporting dynamic catalog filtering, multi-item shopping cart management, user accounts, and structured relational order processing.
+              </p>
+              <div class="project-tech-stack">
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
+                <span>HTML5 / CSS3</span>
+                <span>Payment & Order Flows</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn" data-modal="yardsofgrace">
+                  <span>E-Commerce Flow Details</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+                <a href="https://github.com/drishyapullolil" target="_blank" rel="noopener" class="icon-link" title="GitHub Source">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Recipe Management System -->
+          <div class="project-card glass-panel" data-category="web" data-project="recipemanagement">
+            <div class="project-banner recipe-bg">
+              <div class="project-type-tag"><i class="fa-solid fa-utensils"></i> Content Platform</div>
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-project-btn" data-modal="recipemanagement">
+                  <i class="fa-solid fa-circle-info"></i> View Details
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Recipe Management System — Content Platform</h3>
+              <p class="project-desc">
+                A high-speed culinary content management platform featuring custom taxonomies, categorized recipe listings, instant full-text searching, and mobile-optimized reader experience.
+              </p>
+              <div class="project-tech-stack">
+                <span>WordPress</span>
+                <span>PHP</span>
+                <span>CMS Architecture</span>
+                <span>Full-Text Search</span>
+                <span>Performance Optimization</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn" data-modal="recipemanagement">
+                  <span>CMS Optimization Details</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+                <a href="https://github.com/drishyapullolil" target="_blank" rel="noopener" class="icon-link" title="GitHub Source">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION SECTION -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-timeline"></i> Background</span>
+          <h2 class="section-title">Experience & Education</h2>
+          <p class="section-subtitle">My professional career track, engineering internships, and academic accomplishments.</p>
+        </div>
+
+        <div class="dual-timeline-container">
+          
+          <!-- Experience Column -->
+          <div class="timeline-column">
+            <div class="column-header">
+              <div class="icon-bubble"><i class="fa-solid fa-briefcase"></i></div>
+              <h3>Work Experience</h3>
+            </div>
+
+            <div class="timeline-tree">
+              <!-- Item 1: Ainsoft Solutions -->
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-card glass-panel">
+                  <div class="card-meta">
+                    <span class="meta-date"><i class="fa-regular fa-calendar"></i> Jun 2026 – Jul 2026</span>
+                    <span class="meta-badge">Internship · Hybrid</span>
+                  </div>
+                  <h4 class="card-role">Software Development Intern</h4>
+                  <h5 class="card-company"><i class="fa-solid fa-building"></i> Ainsoft Solutions PVT LTD, Trivandrum, Kerala</h5>
+                  <ul class="card-bullet-list">
+                    <li>Built and integrated scalable <strong>RESTful APIs</strong> using <strong>Node.js and Express.js</strong> to support core application features and high-traffic endpoints.</li>
+                    <li>Engineered responsive, modular frontend components using <strong>React.js</strong>, establishing design consistency across varied mobile and desktop viewports.</li>
+                    <li>Collaborated cross-functionally with team leads on real-time project features, debugging bottlenecks and boosting overall application responsiveness.</li>
+                  </ul>
+                  <div class="card-tags">
+                    <span>Node.js</span>
+                    <span>Express.js</span>
+                    <span>React.js</span>
+                    <span>REST APIs</span>
+                    <span>Team Collaboration</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Column -->
+          <div class="timeline-column" id="education">
+            <div class="column-header">
+              <div class="icon-bubble"><i class="fa-solid fa-graduation-cap"></i></div>
+              <h3>Academic Journey</h3>
+            </div>
+
+            <div class="timeline-tree">
+              <!-- Item 1: Integrated MCA -->
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-card glass-panel">
+                  <div class="card-meta">
+                    <span class="meta-date"><i class="fa-regular fa-calendar"></i> 2022 – 2027</span>
+                    <span class="meta-score"><i class="fa-solid fa-star"></i> CGPA: 7.19 / 10.0</span>
+                  </div>
+                  <h4 class="card-role">Integrated MCA (Master of Computer Applications)</h4>
+                  <h5 class="card-company"><i class="fa-solid fa-university"></i> Amal Jyothi College of Engineering (Autonomous)</h5>
+                  <p class="card-desc">
+                    Comprehensive study covering Data Structures, Algorithms, Object-Oriented Software Engineering, Database Management Systems, Cloud Computing, and IoT embedded systems development.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2: Higher Secondary -->
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-card glass-panel">
+                  <div class="card-meta">
+                    <span class="meta-date"><i class="fa-regular fa-calendar"></i> 2020 – 2022</span>
+                    <span class="meta-score"><i class="fa-solid fa-award"></i> Score: 89%</span>
+                  </div>
+                  <h4 class="card-role">Computer Commerce (Higher Secondary)</h4>
+                  <h5 class="card-company"><i class="fa-solid fa-school"></i> Nirmala H S S Erumamunda</h5>
+                  <p class="card-desc">Graduated with distinction with core focus in Computer Science, Database Fundamentals, and Business Mathematics.</p>
+                </div>
+              </div>
+
+              <!-- Item 3: Tenth -->
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-card glass-panel">
+                  <div class="card-meta">
+                    <span class="meta-date"><i class="fa-regular fa-calendar"></i> 2020</span>
+                    <span class="meta-score"><i class="fa-solid fa-award"></i> Score: 85%</span>
+                  </div>
+                  <h4 class="card-role">Secondary School Leaving Certificate (Tenth)</h4>
+                  <h5 class="card-company"><i class="fa-solid fa-school"></i> Nirmala H S S Erumamunda</h5>
+                  <p class="card-desc">Excelled across sciences, mathematics, and foundational technology subjects.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-certificate"></i> Credentials</span>
+          <h2 class="section-title">Certifications & Accreditations</h2>
+          <p class="section-subtitle">Verified professional credentials demonstrating expertise in cybersecurity, cloud architectures, AI, and Agile development.</p>
+        </div>
+
+        <div class="certs-grid">
+          <!-- Cert 1: Google Cybersecurity -->
+          <div class="cert-card glass-panel">
+            <div class="cert-icon-wrapper google">
+              <i class="fa-brands fa-google"></i>
+            </div>
+            <div class="cert-info">
+              <span class="cert-badge">Professional Certificate</span>
+              <h3 class="cert-title">Google Cybersecurity Professional Certificate</h3>
+              <p class="cert-issuer">Coursera · 2026</p>
+              <p class="cert-summary">Network security, vulnerability assessments, incident response protocols, and security automation.</p>
+            </div>
+          </div>
+
+          <!-- Cert 2: Oracle Cloud AI -->
+          <div class="cert-card glass-panel">
+            <div class="cert-icon-wrapper oracle">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <div class="cert-info">
+              <span class="cert-badge">Associate Credential</span>
+              <h3 class="cert-title">Oracle Cloud Infrastructure AI Foundations Associate</h3>
+              <p class="cert-issuer">Oracle · 2025</p>
+              <p class="cert-summary">Core AI/ML concepts, OCI AI services, generative AI foundations, and cloud deployment pipelines.</p>
+            </div>
+          </div>
+
+          <!-- Cert 3: AWS Cloud Practitioner -->
+          <div class="cert-card glass-panel">
+            <div class="cert-icon-wrapper aws">
+              <i class="fa-brands fa-aws"></i>
+            </div>
+            <div class="cert-info">
+              <span class="cert-badge">Cloud Architecture</span>
+              <h3 class="cert-title">AWS Cloud Practitioner Essentials</h3>
+              <p class="cert-issuer">Amazon Web Services</p>
+              <p class="cert-summary">Fundamental AWS cloud concepts, security, EC2 compute, storage, networking, and serverless.</p>
+            </div>
+          </div>
+
+          <!-- Cert 4: Getting Started with DevOps on AWS -->
+          <div class="cert-card glass-panel">
+            <div class="cert-icon-wrapper aws">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <div class="cert-info">
+              <span class="cert-badge">DevOps & CI/CD</span>
+              <h3 class="cert-title">Getting Started with DevOps on AWS</h3>
+              <p class="cert-issuer">Amazon Web Services</p>
+              <p class="cert-summary">CI/CD pipelines, automated testing, containerized deployments, and infrastructure scaling.</p>
+            </div>
+          </div>
+
+          <!-- Cert 5: Python Coder Kaggle -->
+          <div class="cert-card glass-panel">
+            <div class="cert-icon-wrapper kaggle">
+              <i class="fa-brands fa-python"></i>
+            </div>
+            <div class="cert-info">
+              <span class="cert-badge">Data & Scripting</span>
+              <h3 class="cert-title">Python Coder</h3>
+              <p class="cert-issuer">Kaggle</p>
+              <p class="cert-summary">Advanced data manipulation, algorithm design, syntax mastery, and efficient analytical programming.</p>
+            </div>
+          </div>
+
+          <!-- Cert 6: Scrum Fundamentals Certified -->
+          <div class="cert-card glass-panel">
+            <div class="cert-icon-wrapper scrum">
+              <i class="fa-solid fa-rotate"></i>
+            </div>
+            <div class="cert-info">
+              <span class="cert-badge">Project Management</span>
+              <h3 class="cert-title">Scrum Fundamentals Certified (SFC)</h3>
+              <p class="cert-issuer">SCRUMstudy</p>
+              <p class="cert-summary">Agile frameworks, sprint planning, backlog grooming, cross-functional delivery, and iterative testing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
+          <h2 class="section-title">Let's Connect & Build Together</h2>
+          <p class="section-subtitle">Have an opportunity, project collaboration, or tech discussion? Drop a message or reach out directly!</p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Info Cards -->
+          <div class="contact-info-panel">
+            <div class="contact-card glass-panel">
+              <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-text">
+                <span class="card-sub">Email Me</span>
+                <h4>drishyajose03@gmail.com</h4>
+              </div>
+              <button class="copy-btn copy-email-btn" data-email="drishyajose03@gmail.com" title="Copy to clipboard">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-card glass-panel">
+              <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-text">
+                <span class="card-sub">Call or WhatsApp</span>
+                <h4>+91 9539923291</h4>
+              </div>
+              <button class="copy-btn copy-phone-btn" data-phone="+919539923291" title="Copy to clipboard">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-card glass-panel">
+              <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-text">
+                <span class="card-sub">Location</span>
+                <h4>Pullolil (H), Pookkottumanna (PO), Kerala, India</h4>
+              </div>
+            </div>
+
+            <div class="contact-card glass-panel social-card">
+              <span class="card-sub">Professional Profiles</span>
+              <div class="social-pills-row">
+                <a href="https://linkedin.com/in/drishya-jose" target="_blank" rel="noopener" class="social-badge linkedin">
+                  <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a href="https://github.com/drishyapullolil" target="_blank" rel="noopener" class="social-badge github">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Message Form -->
+          <div class="contact-form-panel glass-panel">
+            <h3 class="form-title"><i class="fa-solid fa-comment-dots"></i> Send a Direct Message</h3>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Your Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="e.g. Alex Johnson" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="e.g. alex@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Project inquiry / Full-time role">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="4" placeholder="Hi Drishya, I loved your MoveSmart IoT and Full Stack projects. We'd love to chat with you..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="send-msg-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Details Modal Dialog -->
+  <div class="modal-backdrop" id="project-modal" aria-hidden="true">
+    <div class="modal-box glass-panel">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-body" id="modal-dynamic-content">
+        <!-- Content injected dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Alert -->
+  <div class="toast-notification" id="toast">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="toast-msg" id="toast-msg">Copied to clipboard!</div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="logo-badge">&lt;DJ /&gt;</span>
+        <span class="brand-text">Drishya Jose</span>
+        <p class="footer-tagline">Crafting scalable web systems & embedded IoT solutions.</p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/drishyapullolil" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/drishya-jose" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:drishyajose03@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Drishya Jose. Designed with modern web standards & passion for clean code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
