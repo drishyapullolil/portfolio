@@ -11,7 +11,7 @@ A modern, responsive, and interactive personal portfolio website showcasing full
 - **Aesthetic Glassmorphism UI**: High-contrast, dark-mode-first aesthetic with dynamic cyan & indigo accents and a seamless dark/light theme switcher.
 - **Ambient Interactive Particle Canvas**: Canvas-based interactive particle network responding to cursor proximity.
 - **Dynamic Project Showcase**: Filterable gallery (Full Stack, IoT & Embedded, Backend & SaaS, Web & CMS) with deep-dive modal windows.
-- **Interactive Timelines**: Highlights industrial software engineering internship experience at **Ainsoft Solutions** and **Integrated MCA** studies at **Amal Jyothi College of Engineering**.
+- **Interactive Timelines**: Highlights backend engineering internship experience at **Havncraft Technologies LLP** (Rakthasethu, PostgreSQL), software development at **Ainsoft Solutions**, and **Integrated MCA** studies at **Amal Jyothi College of Engineering**.
 - **Verified Credentials**: Google Cybersecurity, Oracle Cloud AI, AWS Cloud Practitioner, AWS DevOps, Kaggle Python, and Scrum SFC certificates.
 - **Instant Actions**: One-click copy for email and phone numbers, plus direct message integration.
 

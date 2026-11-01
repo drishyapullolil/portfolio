@@ -1245,6 +1245,53 @@ img {
   border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
+.meta-badge.current-badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-emerald);
+  border-color: rgba(16, 185, 129, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.meta-badge.current-badge i {
+  font-size: 0.45rem;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.85); }
+}
+
+.timeline-item.active .timeline-marker {
+  background: var(--accent-emerald);
+  box-shadow: 0 0 12px var(--accent-emerald);
+}
+
+.card-project-pill {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  color: var(--text-secondary);
+  margin-bottom: 0.95rem;
+}
+
+.card-project-pill strong {
+  color: var(--text-primary);
+}
+
+.card-project-pill .pill-divider {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
 .meta-score {
   font-size: 0.82rem;
   font-weight: 700;
