@@ -2,7 +2,7 @@
 
 A modern, responsive, and interactive personal portfolio website showcasing full-stack web applications, IoT embedded systems, work experience, certifications, and technical skill sets.
 
-🌐 **Live Portfolio / Local Preview**: `http://localhost:4173`
+🌐 **Live Portfolio / Local Preview**: `https://drishyajose-portfolio.netlify.app/`
 
 ---
 
