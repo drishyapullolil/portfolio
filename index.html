@@ -34,42 +34,46 @@
   <!-- Ambient Interactive Canvas Background -->
   <canvas id="ambient-canvas"></canvas>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar (Modern Executive Header) -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="brand-logo" aria-label="Home">
-        <div class="logo-avatar-wrapper">
-          <img src="assets/profile.jpg" alt="Drishya Jose" class="logo-avatar">
-          <span class="logo-status-dot"></span>
+      
+      <!-- Professional Brand Identity -->
+      <a href="#hero" class="brand-logo" aria-label="Drishya Jose - Home">
+        <div class="brand-avatar-box">
+          <img src="assets/profile.jpg" alt="Drishya Jose" class="brand-avatar">
+          <span class="brand-status-dot" title="Available for opportunities"></span>
         </div>
-        <span class="logo-badge">&lt;DJ /&gt;</span>
-        <span class="logo-name">Drishya Jose</span>
+        <div class="brand-meta">
+          <span class="brand-name">Drishya Jose</span>
+          <span class="brand-role">Software Engineer</span>
+        </div>
       </a>
 
-      <!-- Desktop Nav Links -->
+      <!-- Desktop Nav Links (Clean Glass Capsule Dock) -->
       <nav class="nav-menu" id="nav-menu">
         <ul class="nav-list">
-          <li><a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> About</a></li>
-          <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a></li>
-          <li><a href="#projects" class="nav-link"><i class="fa-solid fa-layer-group"></i> Projects</a></li>
-          <li><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
-          <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-          <li><a href="#certifications" class="nav-link"><i class="fa-solid fa-certificate"></i> Certs</a></li>
-          <li><a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
       <!-- Action Controls -->
       <div class="nav-actions">
         <!-- Theme Toggle -->
-        <button id="theme-toggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle dark and light mode">
+        <button id="theme-toggle" class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle dark and light mode">
           <i class="fa-solid fa-sun light-icon"></i>
           <i class="fa-solid fa-moon dark-icon"></i>
         </button>
 
-        <!-- Resume Download Button -->
-        <a href="#contact" class="btn btn-outline nav-cta" id="resume-btn">
-          <span>Get in Touch</span>
+        <!-- Get In Touch CTA -->
+        <a href="#contact" class="btn btn-sm btn-primary nav-cta" id="resume-btn">
+          <span>Let's Talk</span>
           <i class="fa-solid fa-arrow-right"></i>
         </a>
 
@@ -1030,8 +1034,15 @@
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-brand">
-        <span class="logo-badge">&lt;DJ /&gt;</span>
-        <span class="brand-text">Drishya Jose</span>
+        <div class="footer-brand-header">
+          <div class="brand-avatar-box footer-avatar">
+            <img src="assets/profile.jpg" alt="Drishya Jose" class="brand-avatar">
+          </div>
+          <div class="brand-info">
+            <span class="brand-name">Drishya Jose</span>
+            <span class="brand-role">Software Engineer</span>
+          </div>
+        </div>
         <p class="footer-tagline">Crafting scalable web systems & embedded IoT solutions.</p>
       </div>
 
