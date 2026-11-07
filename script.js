@@ -26,6 +26,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 8. Initialize Scroll Reveal Animations
   initScrollAnimations();
+
+  // 9. Initialize Top Reading Scroll Progress Bar
+  initScrollProgress();
+
+  // 10. Initialize Dynamic Cursor Spotlight Glow
+  initSpotlightEffect();
+
+  // 11. Initialize 3D Perspective Tilt on Interactive Cards
+  initTiltCards();
+
+  // 12. Initialize Hero Showcase Deck Tabs
+  initShowcaseTabs();
+
+  // 13. Initialize Animated Number Counters
+  initAnimatedCounters();
+
+  // 14. Initialize Button Click Wave Ripples
+  initButtonRipples();
 });
 
 /* ==========================================================================
@@ -87,6 +105,20 @@ function initAmbientCanvas() {
     mouse.y = null;
   });
 
+  // Interactive Click Shockwave
+  window.addEventListener('click', (e) => {
+    particles.forEach((p) => {
+      const dx = p.x - e.clientX;
+      const dy = p.y - e.clientY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 260 && dist > 0) {
+        const force = (260 - dist) / 260;
+        p.vx += (dx / dist) * force * 5;
+        p.vy += (dy / dist) * force * 5;
+      }
+    });
+  });
+
   class Particle {
     constructor() {
       this.x = Math.random() * width;
@@ -105,6 +137,12 @@ function initAmbientCanvas() {
     }
 
     update() {
+      // Natural velocity damping
+      this.vx *= 0.985;
+      this.vy *= 0.985;
+      if (Math.abs(this.vx) < 0.2) this.vx += (Math.random() - 0.5) * 0.08;
+      if (Math.abs(this.vy) < 0.2) this.vy += (Math.random() - 0.5) * 0.08;
+
       this.x += this.vx;
       this.y += this.vy;
 
@@ -562,7 +600,7 @@ function initContactForm() {
    8. Scroll Animations via Intersection Observer
    ========================================================================== */
 function initScrollAnimations() {
-  const animatedElements = document.querySelectorAll('.glass-panel, .timeline-item, .stat-card, .cert-card');
+  const animatedElements = document.querySelectorAll('.timeline-item, .project-card, .cert-card, .skill-category-card, .about-portrait-card, .about-text-card, .about-info-card');
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
@@ -571,21 +609,222 @@ function initScrollAnimations() {
           if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            entry.target.style.filter = 'blur(0px)';
             obs.unobserve(entry.target);
           }
         });
       },
       {
         root: null,
-        threshold: 0.12
+        threshold: 0.08
       }
     );
 
     animatedElements.forEach((el) => {
+      // If already visible above fold on initial load, show immediately
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        el.style.filter = 'blur(0px)';
+        return;
+      }
+
       el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+      el.style.transform = 'translateY(30px)';
+      el.style.filter = 'blur(4px)';
+      el.style.transition = 'opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease-out';
       observer.observe(el);
     });
   }
+}
+
+/* ==========================================================================
+   9. Top Reading Scroll Progress Bar
+   ========================================================================== */
+function initScrollProgress() {
+  const progressBar = document.getElementById('scroll-progress');
+  if (!progressBar) return;
+
+  window.addEventListener('scroll', () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalHeight > 0) {
+      const progress = (window.scrollY / totalHeight) * 100;
+      progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    }
+  }, { passive: true });
+}
+
+/* ==========================================================================
+   10. Dynamic Cursor Spotlight Glow on Glass Panels
+   ========================================================================== */
+function initSpotlightEffect() {
+  const spotlightTargets = document.querySelectorAll('.glass-panel, .project-card, .stat-card, .cert-card, .about-portrait-card');
+  
+  spotlightTargets.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+}
+
+/* ==========================================================================
+   11. Smooth 3D Perspective Card Tilt
+   ========================================================================== */
+function initTiltCards() {
+  // Only enable on fine pointer devices (avoid mobile touch interference)
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+
+  const tiltCards = document.querySelectorAll('.tilt-card');
+
+  tiltCards.forEach((card) => {
+    function rotateToMouse(e) {
+      const bounds = card.getBoundingClientRect();
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      const leftX = mouseX - bounds.x;
+      const topY = mouseY - bounds.y;
+      const center = {
+        x: leftX - bounds.width / 2,
+        y: topY - bounds.height / 2
+      };
+
+      // Subtle max tilt of 7 degrees
+      const rotX = (center.y / (bounds.height / 2)) * -7;
+      const rotY = (center.x / (bounds.width / 2)) * 7;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+    }
+
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'transform 0.1s ease-out';
+    });
+
+    card.addEventListener('mousemove', rotateToMouse);
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  });
+}
+
+/* ==========================================================================
+   12. Hero Showcase Deck Interactive Tab Switching
+   ========================================================================== */
+function initShowcaseTabs() {
+  const tabButtons = document.querySelectorAll('.showcase-tab-btn');
+  const tabContents = document.querySelectorAll('.showcase-tab-content');
+  const viewCodeBtn = document.getElementById('quick-view-code-btn');
+  const viewProfileBtn = document.getElementById('quick-view-profile-btn');
+
+  function switchTab(targetTab) {
+    tabButtons.forEach((btn) => {
+      if (btn.getAttribute('data-tab') === targetTab) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    tabContents.forEach((content) => {
+      if (content.id === `tab-${targetTab}`) {
+        content.classList.add('active');
+      } else {
+        content.classList.remove('active');
+      }
+    });
+  }
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const tab = btn.getAttribute('data-tab');
+      if (tab) switchTab(tab);
+    });
+  });
+
+  if (viewCodeBtn) {
+    viewCodeBtn.addEventListener('click', () => switchTab('code'));
+  }
+
+  if (viewProfileBtn) {
+    viewProfileBtn.addEventListener('click', () => switchTab('profile'));
+  }
+}
+
+/* ==========================================================================
+   13. Animated Number Counters
+   ========================================================================== */
+function initAnimatedCounters() {
+  const counters = document.querySelectorAll('.counter-value');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const duration = 1400; // ms
+        const startTime = performance.now();
+
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease Out Quad
+          const easeProgress = 1 - (1 - progress) * (1 - progress);
+          const currentCount = Math.floor(easeProgress * target);
+
+          counter.textContent = `${currentCount}${progress === 1 ? suffix : ''}`;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = `${target}${suffix}`;
+          }
+        }
+
+        requestAnimationFrame(updateCounter);
+        obs.unobserve(counter);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  counters.forEach((c) => observer.observe(c));
+}
+
+/* ==========================================================================
+   14. Button Click Wave Ripples
+   ========================================================================== */
+function initButtonRipples() {
+  const buttons = document.querySelectorAll('.btn');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', function (e) {
+      const rect = this.getBoundingClientRect();
+      const circle = document.createElement('span');
+      const diameter = Math.max(rect.width, rect.height);
+      const radius = diameter / 2;
+
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${e.clientX - rect.left - radius}px`;
+      circle.style.top = `${e.clientY - rect.top - radius}px`;
+      circle.classList.add('btn-ripple');
+
+      const existingRipple = this.querySelector('.btn-ripple');
+      if (existingRipple) {
+        existingRipple.remove();
+      }
+
+      this.appendChild(circle);
+
+      setTimeout(() => {
+        circle.remove();
+      }, 600);
+    });
+  });
 }

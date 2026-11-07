@@ -28,6 +28,9 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Top Scroll Reading Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress-bar"></div>
+
   <!-- Ambient Interactive Canvas Background -->
   <canvas id="ambient-canvas"></canvas>
 
@@ -35,6 +38,10 @@
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#hero" class="brand-logo" aria-label="Home">
+        <div class="logo-avatar-wrapper">
+          <img src="assets/profile.jpg" alt="Drishya Jose" class="logo-avatar">
+          <span class="logo-status-dot"></span>
+        </div>
         <span class="logo-badge">&lt;DJ /&gt;</span>
         <span class="logo-name">Drishya Jose</span>
       </a>
@@ -137,21 +144,88 @@
 
         <!-- Hero Visual / Interactive Showcase Card -->
         <div class="hero-visual">
-          <div class="code-window glass-panel">
+          <div class="hero-showcase-card glass-panel tilt-card" id="hero-showcase">
+            
+            <!-- Window Header with Tabs -->
             <div class="window-header">
               <div class="window-controls">
                 <span class="control red"></span>
                 <span class="control yellow"></span>
                 <span class="control green"></span>
               </div>
-              <div class="window-tab">
-                <i class="fa-brands fa-js"></i> developer.profile.js
+              <div class="showcase-tabs">
+                <button class="showcase-tab-btn active" data-tab="profile" id="tab-profile-btn" aria-label="View Profile Showcase">
+                  <i class="fa-solid fa-user-astronaut"></i> <span>Profile</span>
+                </button>
+                <button class="showcase-tab-btn" data-tab="code" id="tab-code-btn" aria-label="View Developer Code">
+                  <i class="fa-brands fa-js"></i> <span>developer.profile.js</span>
+                </button>
               </div>
             </div>
-            <div class="window-body">
-              <pre><code><span class="code-keyword">const</span> <span class="code-var">engineer</span> = {
+
+            <!-- Tab 1: Profile Showcase with Animated Aura & Floating Badges -->
+            <div class="showcase-tab-content active" id="tab-profile">
+              <div class="profile-hero-wrapper">
+                
+                <!-- Glowing Animated Aura Frame -->
+                <div class="profile-avatar-aura">
+                  <div class="conic-glow-spinner"></div>
+                  <div class="profile-avatar-inner">
+                    <img src="assets/profile.jpg" alt="Drishya Jose - Full Stack Developer" class="profile-hero-img">
+                    <div class="profile-status-glow" title="Available for Opportunities">
+                      <span class="pulse-beacon"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating Orbit Tech Badges with Parallax -->
+                <div class="floating-badge badge-top-right">
+                  <i class="fa-brands fa-react"></i>
+                  <span>React.js</span>
+                </div>
+                <div class="floating-badge badge-top-left">
+                  <i class="fa-solid fa-database"></i>
+                  <span>PostgreSQL</span>
+                </div>
+                <div class="floating-badge badge-bottom-left">
+                  <i class="fa-brands fa-node-js"></i>
+                  <span>Node · Spring</span>
+                </div>
+                <div class="floating-badge badge-bottom-right">
+                  <i class="fa-solid fa-microchip"></i>
+                  <span>Embedded IoT</span>
+                </div>
+
+                <!-- Hero Card Bio & Identity Tags -->
+                <div class="hero-card-info">
+                  <h3 class="hero-card-name">Drishya Jose</h3>
+                  <p class="hero-card-role">Full Stack & IoT Engineer · Backend Developer</p>
+                  <div class="hero-card-tags">
+                    <span class="hero-tag"><i class="fa-solid fa-building"></i> Havncraft Tech</span>
+                    <span class="hero-tag"><i class="fa-solid fa-graduation-cap"></i> Integrated MCA</span>
+                    <span class="hero-tag"><i class="fa-solid fa-location-dot"></i> Kerala, India</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Footer with Quick Metrics & Action Switch -->
+              <div class="window-footer profile-card-footer">
+                <div class="stat-pill"><i class="fa-solid fa-bolt"></i> High-Speed APIs</div>
+                <div class="stat-pill"><i class="fa-solid fa-microchip"></i> IoT Telemetry</div>
+                <button class="btn-toggle-code" id="quick-view-code-btn" title="Inspect source code">
+                  <span>View Code</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Tab 2: developer.profile.js (Code View) -->
+            <div class="showcase-tab-content" id="tab-code">
+              <div class="window-body">
+                <pre><code><span class="code-keyword">const</span> <span class="code-var">engineer</span> = {
   <span class="code-prop">name</span>: <span class="code-str">'Drishya Jose'</span>,
   <span class="code-prop">title</span>: <span class="code-str">'Full Stack & IoT Developer'</span>,
+  <span class="code-prop">experience</span>: <span class="code-str">'Havncraft Technologies LLP'</span>,
   <span class="code-prop">location</span>: <span class="code-str">'Kerala, India'</span>,
   <span class="code-prop">stack</span>: [
     <span class="code-str">'React.js'</span>, <span class="code-str">'Node.js'</span>, 
@@ -164,43 +238,47 @@
     <span class="code-keyword">return</span> <span class="code-str">'Let\'s build something awesome!'</span>;
   }
 };</code></pre>
+              </div>
+              <div class="window-footer">
+                <div class="stat-pill"><i class="fa-solid fa-bolt"></i> Fast REST APIs</div>
+                <div class="stat-pill"><i class="fa-solid fa-microchip"></i> IoT Integration</div>
+                <button class="btn-toggle-code" id="quick-view-profile-btn" title="Back to profile card">
+                  <i class="fa-solid fa-arrow-left"></i> <span>Back to Profile</span>
+                </button>
+              </div>
             </div>
-            <div class="window-footer">
-              <div class="stat-pill"><i class="fa-solid fa-bolt"></i> Fast REST APIs</div>
-              <div class="stat-pill"><i class="fa-solid fa-microchip"></i> IoT Integration</div>
-              <div class="stat-pill"><i class="fa-solid fa-shield-halved"></i> Secure Architectures</div>
-            </div>
+
           </div>
         </div>
       </div>
 
-      <!-- Quick Metrics Strip -->
-      <div class="container stats-strip">
-        <div class="stat-card glass-panel">
+      <!-- Quick Metrics Strip with Animated Counters -->
+      <div class="container stats-strip" id="stats-strip">
+        <div class="stat-card glass-panel tilt-card">
           <div class="stat-icon"><i class="fa-solid fa-diagram-project"></i></div>
           <div class="stat-details">
-            <span class="stat-num" data-target="5">5+</span>
+            <span class="stat-num counter-value" data-target="5" data-suffix="+">0</span>
             <span class="stat-title">Featured Projects</span>
           </div>
         </div>
-        <div class="stat-card glass-panel">
+        <div class="stat-card glass-panel tilt-card">
           <div class="stat-icon"><i class="fa-solid fa-cubes"></i></div>
           <div class="stat-details">
-            <span class="stat-num" data-target="10">10+</span>
+            <span class="stat-num counter-value" data-target="10" data-suffix="+">0</span>
             <span class="stat-title">Tech Stacks & Tools</span>
           </div>
         </div>
-        <div class="stat-card glass-panel">
+        <div class="stat-card glass-panel tilt-card">
           <div class="stat-icon"><i class="fa-solid fa-certificate"></i></div>
           <div class="stat-details">
-            <span class="stat-num" data-target="6">6+</span>
+            <span class="stat-num counter-value" data-target="6" data-suffix="+">0</span>
             <span class="stat-title">Certifications</span>
           </div>
         </div>
-        <div class="stat-card glass-panel">
+        <div class="stat-card glass-panel tilt-card">
           <div class="stat-icon"><i class="fa-solid fa-building-user"></i></div>
           <div class="stat-details">
-            <span class="stat-num">2</span>
+            <span class="stat-num counter-value" data-target="2" data-suffix="">0</span>
             <span class="stat-title">Industry Internships</span>
           </div>
         </div>
@@ -217,7 +295,42 @@
         </div>
 
         <div class="about-grid">
-          <div class="about-text-card glass-panel">
+          
+          <!-- Card 1: Featured Portrait Card with Holographic Sheen & Quick Socials -->
+          <div class="about-portrait-card glass-panel tilt-card">
+            <div class="portrait-image-container">
+              <img src="assets/profile.jpg" alt="Drishya Jose" class="portrait-img">
+              <div class="portrait-gradient-overlay"></div>
+              <div class="verified-tag">
+                <i class="fa-solid fa-circle-check"></i> Verified Engineer
+              </div>
+            </div>
+            <div class="portrait-details">
+              <h3 class="portrait-name">Drishya Jose</h3>
+              <p class="portrait-sub">Full Stack & IoT Engineer</p>
+              <div class="portrait-badges">
+                <span class="p-badge"><i class="fa-solid fa-briefcase"></i> Havncraft LLP</span>
+                <span class="p-badge"><i class="fa-solid fa-graduation-cap"></i> MCA Scholar</span>
+              </div>
+              <div class="portrait-social-row">
+                <a href="https://linkedin.com/in/drishya-jose" target="_blank" rel="noopener" class="p-social-btn" title="LinkedIn Profile">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/drishyapullolil" target="_blank" rel="noopener" class="p-social-btn" title="GitHub Profile">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="mailto:drishyajose03@gmail.com" class="p-social-btn" title="Send Direct Email">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="#contact" class="btn btn-sm btn-primary p-connect-btn">
+                  <span>Connect</span> <i class="fa-solid fa-paper-plane"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Narrative & Highlights -->
+          <div class="about-text-card glass-panel tilt-card">
             <h3>Full Stack Problem Solver & IoT Enthusiast</h3>
             <p>
               I am a results-oriented <strong>Full Stack Developer</strong> currently pursuing my <strong>Integrated Master of Computer Applications (MCA)</strong> at Amal Jyothi College of Engineering. I specialize in developing end-to-end web platforms and hardware-integrated IoT architectures that tackle real-world problems.
@@ -241,7 +354,8 @@
             </div>
           </div>
 
-          <div class="about-info-card glass-panel">
+          <!-- Card 3: Quick Facts & Contact Info -->
+          <div class="about-info-card glass-panel tilt-card">
             <h3 class="card-heading"><i class="fa-solid fa-address-card"></i> Contact & Details</h3>
             <ul class="info-list">
               <li>

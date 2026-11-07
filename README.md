@@ -8,6 +8,8 @@ A modern, responsive, and interactive personal portfolio website showcasing full
 
 ## ⚡ Key Highlights
 
+- **Interactive 3D Showcase Deck & Portrait**: Features Drishya's professional portrait with an animated electric conic-gradient aura, floating parallax tech badges, and a seamless toggle to live syntax-highlighted code.
+- **Advanced Dynamic Animations**: 3D cursor perspective tilt, cursor spotlight glass illumination, top reading progress indicator, particle canvas shockwave physics, and animated easing number counters.
 - **Aesthetic Glassmorphism UI**: High-contrast, dark-mode-first aesthetic with dynamic cyan & indigo accents and a seamless dark/light theme switcher.
 - **Ambient Interactive Particle Canvas**: Canvas-based interactive particle network responding to cursor proximity.
 - **Dynamic Project Showcase**: Filterable gallery (Full Stack, IoT & Embedded, Backend & SaaS, Web & CMS) with deep-dive modal windows.
