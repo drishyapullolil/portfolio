@@ -61,7 +61,7 @@ portfolio/
 ## 📬 Contact & Connect
 
 - **Email**: [drishyajose03@gmail.com](mailto:drishyajose03@gmail.com)
-- **LinkedIn**: [linkedin.com/in/drishya-jose](https://linkedin.com/in/drishya-jose)
+- **LinkedIn**: [linkedin.com/in/drishya-jose-91015b320](https://www.linkedin.com/in/drishya-jose-91015b320)
 - **GitHub**: [github.com/drishyapullolil](https://github.com/drishyapullolil)
 - **Phone**: +91 9539923291
 - **Location**: Kerala, India
